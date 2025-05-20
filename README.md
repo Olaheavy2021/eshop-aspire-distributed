@@ -6,7 +6,7 @@
 ![image](https://github.com/user-attachments/assets/bb9dcbcc-f045-44a9-a07d-5fd007f55f87)
 
 
-![image](https://github.com/user-attachments/assets/b7c8a98d-3958-4f82-8f16-e547a16e4361)
+![me](https://github.com/Olaheavy2021/eshop-aspire-distributed/blob/main/419363707-31353be8-5419-4161-bbac-c0ed5cf42899.gif)
 
 
 ## Overview
