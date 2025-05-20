@@ -1,7 +1,7 @@
 # eshop-aspire-distributed
 # EShop Aspire
 
-Welcome to **EShop Aspire**, your all-in-one solution for exploring a production-ready, AI-infused microservices e-commerce platform powered by .NET Aspire and GenAI. This repository contains everything you need to run, explore, and extend a distributed architecture that emphasizes resilience, scalability, and real-time intelligence.
+**EShop Aspire*, an all-in-one solution for exploring a production-ready, AI-infused microservices e-commerce platform powered by .NET Aspire and GenAI. This repository contains everything you need to run, explore, and extend a distributed architecture that emphasizes resilience, scalability, and real-time intelligence.
 
 ## Overview
 
