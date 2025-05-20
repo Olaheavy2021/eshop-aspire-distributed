@@ -3,6 +3,12 @@
 
 **EShop Aspire*, an all-in-one solution for exploring a production-ready, AI-infused microservices e-commerce platform powered by .NET Aspire and GenAI. This repository contains everything you need to run, explore, and extend a distributed architecture that emphasizes resilience, scalability, and real-time intelligence.
 
+![image](https://github.com/user-attachments/assets/bb9dcbcc-f045-44a9-a07d-5fd007f55f87)
+
+
+![image](https://github.com/user-attachments/assets/b7c8a98d-3958-4f82-8f16-e547a16e4361)
+
+
 ## Overview
 
 EShop Aspire demonstrates how to compose a modern e-shop out of loosely coupled services, each built on .NET Aspire for seamless orchestration. From product catalog management in PostgreSQL to basket storage in Redis, every component showcases best practices in cloud-native design. GenAI capabilities—powered by Microsoft.Extensions.AI and the Semantic Kernel—bring automated product recommendations and dynamic descriptions to shopping experience.
