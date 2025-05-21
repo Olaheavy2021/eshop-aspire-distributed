@@ -1,6 +1,9 @@
-﻿namespace Catalog.Services;
+﻿using MassTransit;
+using ServiceDefaults.Messaging.Events;
 
-public class ProductService(ProductDbContext dbContext)
+namespace Catalog.Services;
+
+public class ProductService(ProductDbContext dbContext, IBus bus)
 {
     public async Task CreateProductAsync(Product product)
     {
@@ -20,6 +23,8 @@ public class ProductService(ProductDbContext dbContext)
 
     public async Task UpdateProductAsync(Product updatedProduct, Product inputProduct)
     {
+        var doPublishEvent = updatedProduct.Price != inputProduct.Price;
+
         // update product with new values
         updatedProduct.Name = inputProduct.Name;
         updatedProduct.Description = inputProduct.Description;
@@ -28,6 +33,20 @@ public class ProductService(ProductDbContext dbContext)
 
         dbContext.Products.Update(updatedProduct);
         await dbContext.SaveChangesAsync();
+
+        if (doPublishEvent)
+        {
+            // Publish product price changed integration event for update basket prices
+            var integrationEvent = new ProductPriceChangedIntegrationEvent
+            {
+                ProductId = updatedProduct.Id,
+                Name = inputProduct.Name,
+                Description = inputProduct.Description,
+                Price = inputProduct.Price,
+                ImageUrl = inputProduct.ImageUrl
+            };
+            await bus.Publish(integrationEvent);
+        }
     }
     public async Task DeleteProductAsync(Product deletedProduct)
     {

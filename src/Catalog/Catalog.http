@@ -4,6 +4,7 @@ GET {{Catalog_HostAddress}}/
 Accept: application/json
 
 ###
+
 GET {{Catalog_HostAddress}}/1
 Accept: application/json
 
@@ -28,6 +29,17 @@ Content-Type: application/json
     "description": "An UPDATED swn product for outdoor enthusiasts",
     "price": 19.99,
     "imageUrl": "product10.png"
+}
+
+### update price
+
+PUT {{Catalog_HostAddress}}/1
+Content-Type: application/json
+{    
+    "name": "Solar Powered Flashlight",
+    "description": "A fantastic product for outdoor enthusiasts",
+    "price": 5.99,
+    "imageUrl": "product1.png"
 }
 
 ###

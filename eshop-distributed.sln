@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "src\Catalog\Catalog.csproj", "{C4F761E8-674E-7804-3E8F-374E41B75BE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "src\Basket\Basket.csproj", "{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{6D9847DE-A86F-4744-AE0B-C7512B2E3E10} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C4F761E8-674E-7804-3E8F-374E41B75BE9} = {BCE308D8-7E82-4899-A77F-0C45DC62E211}
 		{11C93E6E-64C1-2C2D-B301-852C7CCA6F88} = {BCE308D8-7E82-4899-A77F-0C45DC62E211}
+		{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5} = {F9243C93-0DD5-407E-9BEC-54566CFCD9AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF6EC29C-9554-416A-8D67-5ECB4CC5E3FF}
