@@ -1,4 +1,6 @@
 ﻿using MassTransit;
+using Microsoft.Extensions.AI;
+using Microsoft.Extensions.VectorData;
 using ServiceDefaults.Messaging.Events;
 
 namespace Catalog.Services;
@@ -52,5 +54,12 @@ public class ProductService(ProductDbContext dbContext, IBus bus)
     {
         dbContext.Products.Remove(deletedProduct);
         await dbContext.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Product>> SearchProductsAsync(string query)
+    {
+        return await dbContext.Products
+            .Where(p => p.Name.Contains(query))
+            .ToListAsync();
     }
 }

@@ -1,3 +1,5 @@
+using Microsoft.SemanticKernel;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +19,9 @@ builder.Services.AddOpenApi();
 
 builder.AddOllamaSharpChatClient("chat");
 builder.AddOllamaSharpEmbeddingGenerator("embedding");
+
+// Register an in-memory vector store
+builder.Services.AddInMemoryVectorStoreRecordCollection<int, ProductVector>("products");
 
 var app = builder.Build();
 
