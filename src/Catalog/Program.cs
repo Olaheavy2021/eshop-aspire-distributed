@@ -6,11 +6,17 @@ builder.AddServiceDefaults();
 //more like a connection string for the database
 builder.AddNpgsqlDbContext<ProductDbContext>(connectionName: "catalogdb");
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<ProductAIService>();
 builder.Services.AddMassTransitWithAssemblies(Assembly.GetExecutingAssembly());
 
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+//builder.AddOllamaSharpChatClient("ollama");
+
+builder.AddOllamaSharpChatClient("chat");
+builder.AddOllamaSharpEmbeddingGenerator("embedding");
 
 var app = builder.Build();
 

@@ -26,7 +26,13 @@ namespace Microsoft.Extensions.Hosting
             builder.Services.ConfigureHttpClientDefaults(http =>
             {
                 // Turn on resilience by default
-                http.AddStandardResilienceHandler();
+                http.AddStandardResilienceHandler(config =>
+                {
+                    TimeSpan timeSpan = TimeSpan.FromMinutes(2);
+                    config.AttemptTimeout.Timeout = timeSpan;
+                    config.CircuitBreaker.SamplingDuration = timeSpan * 2;
+                    config.TotalRequestTimeout.Timeout = timeSpan * 3;
+                });
 
                 // Turn on service discovery by default
                 http.AddServiceDiscovery();

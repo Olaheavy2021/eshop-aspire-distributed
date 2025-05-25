@@ -26,6 +26,18 @@ var keycloak = builder
     //.WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
+var ollama = builder
+    .AddOllama("ollama", 11434)
+    //.WithDataVolume()
+    .WithLifetime(ContainerLifetime.Persistent)
+    .WithOpenWebUI();
+
+var chat = ollama.AddModel("chat", "llama3.2");
+var embeddings = ollama.AddModel("embedding", "all-minilm");
+
+//var llama = ollama.AddModel("llama3.2");
+//var embedding = ollama.AddModel("all-minilm");
+
 if (builder.ExecutionContext.IsRunMode)
 {
     //Data volume don't work on ACA for
@@ -33,17 +45,20 @@ if (builder.ExecutionContext.IsRunMode)
     keycloak.WithDataVolume();
     rabbitmq.WithDataVolume();
     cache.WithDataVolume();
+    ollama.WithDataVolume();
 }
-
-
 
 // add projects
 var catalog = builder
     .AddProject<Projects.Catalog>("catalog")
     .WithReference(catalogDb)
     .WithReference(rabbitmq)
+     .WithReference(chat)
+     .WithReference(embeddings)
     .WaitFor(catalogDb)
-    .WaitFor(rabbitmq);
+    .WaitFor(rabbitmq)
+    .WaitFor(chat)
+    .WaitFor(embeddings);
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
